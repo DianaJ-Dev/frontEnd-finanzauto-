@@ -13,4 +13,4 @@ export const Footer = () => {
       </div>
     </Navbar>
   );
-};
+}
