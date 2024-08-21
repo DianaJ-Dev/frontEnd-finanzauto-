@@ -1,5 +1,4 @@
 import React from 'react';
-import { Cards} from '../components/Card';
 import { Card, Button } from 'react-bootstrap';
 import {product} from '../helpers/Api';
 

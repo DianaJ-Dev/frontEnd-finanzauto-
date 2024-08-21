@@ -5,14 +5,11 @@ import Card from 'react-bootstrap/Card';
 
 export const CardDetail = ({ showModal, handleCloseModal, selectedProduct }) => {
   const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const encodedTitle = encodeURIComponent(selectedProduct.title);
-        console.log(encodedTitle)
+        
         const url = `https://backend-finanzauto.onrender.com/summary/${selectedProduct.title}`;
         const response = await fetch(url);
 
@@ -21,7 +18,7 @@ export const CardDetail = ({ showModal, handleCloseModal, selectedProduct }) => 
         }
 
         const jsonData = await response.json();
-        console.log(jsonData)
+        
         setData(jsonData);
       } catch (error) {
         setError(error);
@@ -60,7 +57,7 @@ export const CardDetail = ({ showModal, handleCloseModal, selectedProduct }) => 
               <p>Lo peor: {data.summaryWorst}</p>
           </>
           ) : (
-          <p>Cargando...</p> // O un mensaje de error si data no está disponible
+          <p>Cargando...</p> 
           )}
         </Card.Text>
       </Modal.Body>
